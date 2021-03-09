@@ -8,45 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class JogoDoTrabalhadorBrasileiro {
 
-	public static void main(String[] args) throws InterruptedException {
-		String nome;
-		String amoSegundaFeira;
-		int regiaoResidencia = 0;
-		int menuTransporte = 0;
-		int menuSolucao = 0;
-		int menuDesculpa =0;
-		String desculpa;
-		String solucao = null;
-		String localTrabalho = null;
-		String meioTransporte = null;
-		String hora = "05:30";
-
-		
-		int horario;
-		
-		Scanner leitor = new Scanner (System.in);
-		
-		System.out.println("Olá brasileirinho, hoje é domingo de noite e amanhã é dia de trabalhar!");
-		TimeUnit.SECONDS.sleep(1);
-		System.out.println("");
-		System.out.println("Espero que você esteja feliz por amanhã ser segunda-feira!");
-		TimeUnit.SECONDS.sleep(1);
-		System.out.println("");
-		System.out.println("Para comerçarmos, por favor digite o seu nome: ");
-		TimeUnit.SECONDS.sleep(1);
-		nome = leitor.nextLine();
-		
-		System.out.println("");
-		TimeUnit.SECONDS.sleep(1);
-		System.out.println("Certo "+ nome + " :)... agora para iniciarmos bem animados o jogo por favor digite: \"Eu amo as segundas-feiras\"");
-		
-		amoSegundaFeira = leitor.nextLine();
-		
-		while (!amoSegundaFeira.equalsIgnoreCase("Eu amo as segundas-feiras")) {
-			TimeUnit.SECONDS.sleep(1);
-			System.out.println("Ahhh Vamos lá :( Você ama as segundas feiras, digita certo... \"Eu amo as segundas-feiras\"");
-			amoSegundaFeira = leitor.nextLine();
-		}
+	public static void began() {
 		System.out.println("");
 		TimeUnit.SECONDS.sleep(1);
 		System.out.println("É isso " + nome + " eu também amo as segundas feiras, sendo assim espero que durma e bem e descanse, porque amanhã vocÊ sabera o inferno que é trabalhar em São Paulo... Nos vemos amanhã!");
@@ -101,6 +63,89 @@ public class JogoDoTrabalhadorBrasileiro {
 		System.out.println("   `-.  | |  |                             ");
 		TimeUnit.SECONDS.sleep(1);
 		System.out.println("      `-| '");
+	}
+
+	
+	
+	public static void reg () {
+		System.out.println("1 - Zona Norte");
+		System.out.println("2 - Zona Sul");
+		System.out.println("3 - Zona Leste");
+		System.out.println("4 - Zona Oeste");
+	}
+	
+	public static void zs () {
+	System.out.println("Ótimo, você escolheu Zona Norte, sendo assim o seu local de trabalho será na Zona Sul.");
+	localTrabalho = "Zona Sul";
+	}
+	
+	public static void zn () {
+	System.out.println("Ótimo, você escolheu Zona Zul, sendo assim o seu local de trabalho será na Zona Norte.");
+	localTrabalho = "Zona Norte";
+	}
+	
+	public static void zo () {
+	System.out.println("Ótimo, você escolheu Zona Leste, sendo assim o seu local de trabalho será na Zona Oeste.");
+	localTrabalho = "Zona Oeste";
+	}
+	
+	public static void zl () {
+	System.out.println("Ótimo, você escolheu Zona Oeste, sendo assim o seu local de trabalho será na na Zona Leste.");
+	localTrabalho = "Zona Leste";
+	}
+	
+	public static void transporte () 
+	{
+		System.out.println("Por favor, selecione algum transporte abaixo: ");
+		
+		System.out.println("1 - Ônibus");
+		System.out.println("2 - Metrô");
+		System.out.println("3 - Carro");	
+	}
+	
+	
+	
+	
+	public static void main(String[] args) throws InterruptedException {
+		String nome;
+		String amoSegundaFeira;
+		int regiaoResidencia = 0;
+		int menuTransporte = 0;
+		int menuSolucao = 0;
+		int menuDesculpa =0;
+		String desculpa;
+		String solucao = null;
+		String localTrabalho = null;
+		String meioTransporte = null;
+		String hora = "05:30";
+
+		
+		int horario;
+		
+		Scanner leitor = new Scanner (System.in);
+		
+		System.out.println("Olá brasileirinho, hoje é domingo de noite e amanhã é dia de trabalhar!");
+		TimeUnit.SECONDS.sleep(1);
+		System.out.println("");
+		System.out.println("Espero que você esteja feliz por amanhã ser segunda-feira!");
+		TimeUnit.SECONDS.sleep(1);
+		System.out.println("");
+		System.out.println("Para comerçarmos, por favor digite o seu nome: ");
+		TimeUnit.SECONDS.sleep(1);
+		nome = leitor.nextLine();
+		
+		System.out.println("");
+		TimeUnit.SECONDS.sleep(1);
+		System.out.println("Certo "+ nome + " :)... agora para iniciarmos bem animados o jogo por favor digite: \"Eu amo as segundas-feiras\"");
+		
+		amoSegundaFeira = leitor.nextLine();
+		
+		while (!amoSegundaFeira.equalsIgnoreCase("Eu amo as segundas-feiras")) {
+			TimeUnit.SECONDS.sleep(1);
+			System.out.println("Ahhh Vamos lá :( Você ama as segundas feiras, digita certo... \"Eu amo as segundas-feiras\"");
+			amoSegundaFeira = leitor.nextLine();
+		}			
+			began();
 		
 		System.out.println("*Celular desperta, são 05:30 de uma segunda-feira");
 		System.out.println("Bom dia " + nome + "! Espero que você esteja preparado para ir ao trabalho!");
@@ -110,9 +155,7 @@ public class JogoDoTrabalhadorBrasileiro {
 		System.out.println("Vamos iniciar essa segunda-feira descobrindo onde você mora");
 		System.out.println("");
 		TimeUnit.SECONDS.sleep(2);
-		
-		
-		
+			
 		while (regiaoResidencia ==0 || regiaoResidencia >4 )  {
 			
 			System.out.println("");
@@ -120,35 +163,22 @@ public class JogoDoTrabalhadorBrasileiro {
 			System.out.println("Por favor, utilize as opções abaixo: ");
 			TimeUnit.SECONDS.sleep(1);
 			
-			System.out.println("1 - Zona Norte");
-			System.out.println("2 - Zona Sul");
-			System.out.println("3 - Zona Leste");
-			System.out.println("4 - Zona Oeste");
-			
+			reg();
 			regiaoResidencia = leitor.nextInt();
-		
-		
-		
 		
 		switch(regiaoResidencia) {
 		case 1:
-			System.out.println("Ótimo, você escolheu Zona Norte, sendo assim o seu local de trabalho será na Zona Sul.");
-			localTrabalho = "Zona Sul";
+			zs();
 			break;
 		case 2:
-			System.out.println("Ótimo, você escolheu Zona Zul, sendo assim o seu local de trabalho será na Zona Norte.");
-			localTrabalho = "Zona Norte";
+			zn();
 			break;
 		case 3:
-			System.out.println("Ótimo, você escolheu Zona Leste, sendo assim o seu local de trabalho será na Zona Oeste.");
-			localTrabalho = "Zona Oeste";
+			zo();
 		case 4:
-			System.out.println("Ótimo, você escolheu Zona Oeste, sendo assim o seu local de trabalho será na na Zona Leste.");
-			localTrabalho = "Zona Leste";
+			zl();
 			break;
-			
-			
-
+	
 		}
 		
 		}
@@ -165,12 +195,8 @@ public class JogoDoTrabalhadorBrasileiro {
 			
 			System.out.println("");
 			TimeUnit.SECONDS.sleep(1);
-			System.out.println("Por favor, selecione algum transporte abaixo: ");
 			
-			System.out.println("1 - Ônibus");
-			System.out.println("2 - Metrô");
-			System.out.println("3 - Carro");
-			
+			transporte();
 			menuTransporte = leitor.nextInt();
 		
 		switch (menuTransporte) {
